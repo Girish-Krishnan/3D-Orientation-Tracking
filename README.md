@@ -17,11 +17,11 @@ We estimate a rotating object's 3D orientation from IMU data and use that pose s
 
 ## Mathematical model
 
-*State*   $q_t \in \mathbb H_*$ is a unit quaternion at time $t$.
+*State*  $q_t\in\mathbb H_*$ is a unit quaternion at time $t$.
 
-*Motion*   $\displaystyle q_{t+1}=q_t\circ \exp\bigl([0,\tfrac{\tau_t \omega_t}{2}]\bigr)$ where $\omega_t$ is the measured angular velocity and $\tau_t$ is the sample period.
+*Motion*   $q_{t+1}=q_t\circ \exp\bigl([0,\tfrac{\tau_t \omega_t}{2}]\bigr)$ where $\omega_t$ is the measured angular velocity and $\tau_t$ is the sample period.
 
-*Observation*   $\displaystyle a_t=q_t^{-1}\circ[0,0,-g]\circ q_t$ gives expected accelerometer output.
+*Observation*   $a_t=q_t^{-1}\circ[0,0,-g]\circ q_t$ gives expected accelerometer output.
 
 *Cost*
 
@@ -32,7 +32,7 @@ c(q_{1:T}) &= \frac12\sum_{t=0}^{T-1}\bigl\|\,\log\bigl(q_{t+1}^{-1}\circ f(q_t,
 \end{aligned}
 $$
 
-Subject to $||q_t||_2=1$ for every $t$.
+Subject to $|q_t|_2=1$ for every $t$.
 
 ## Algorithm outline
 
@@ -46,7 +46,7 @@ Subject to $||q_t||_2=1$ for every $t$.
 3. **Projected gradient descent**
 
    * Gradient step: $q_{1:T}^{(k+1)} = q_{1:T}^{(k)} - \alpha\nabla c(q_{1:T}^{(k)})$
-   * Projection: $q \gets q/||q||_2$
+   * Projection: $q \gets q/|q|_2$
 4. **Panorama generation**
 
    * Timestamp match camera frames to closest IMU pose.
