@@ -27,8 +27,8 @@ We estimate a rotating object's 3D orientation from IMU data and use that pose s
 
 $$
 \begin{aligned}
-c(q_{1:T}) &= \frac12\sum_{t=0}^{T-1}\bigl\|\,\log\bigl(q_{t+1}^{-1}\circ f(q_t,\tau_t\omega_t)\bigr)\bigr\|^2 \\
-&\quad+\frac12\sum_{t=1}^{T}\|\,a_t-h(q_t)\|^2
+c(q_{1:T}) &= \frac12\sum_{t=0}^{T-1}\bigl\|\log\bigl(q_{t+1}^{-1}\circ f(q_t,\tau_t\omega_t)\bigr)\bigr\|^2 \\
+&\quad+\frac12\sum_{t=1}^{T}\|a_t-h(q_t)\|^2
 \end{aligned}
 $$
 
