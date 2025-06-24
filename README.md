@@ -17,7 +17,7 @@ We estimate a rotating object's 3D orientation from IMU data and use that pose s
 
 ## Mathematical model
 
-*State*  $q_t\in H_*$ is a unit quaternion at time $t$.
+*State*  $$q_t\in \mathbb H_*$$ is a unit quaternion at time $t$.
 
 *Motion*   $q_{t+1}=q_t\circ \exp\left([0,\tfrac{\tau_t \omega_t}{2}]\right)$ where $\omega_t$ is the measured angular velocity and $\tau_t$ is the sample period.
 
