@@ -25,7 +25,9 @@ Motion
 
 $$q_{t+1}=q_t\circ \exp\left([0,\tfrac{\tau_t \omega_t}{2}]\right)$$ where $\omega_t$ is the measured angular velocity and $\tau_t$ is the sample period.
 
-Observation   $a_t=q_t^{-1}\circ[0,0,-g]\circ q_t$ gives expected accelerometer output.
+Observation
+
+$$a_t=q_t^{-1}\circ[0,0,-g]\circ q_t$$ gives expected accelerometer output.
 
 Cost
 
